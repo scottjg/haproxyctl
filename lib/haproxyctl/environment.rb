@@ -61,6 +61,7 @@ module HAProxyCTL
       if File.exists?(pidfile)
         pid = File.read(pidfile)
         pid.strip!
+        pid = pid.split(/\n/).first
       end
 
       # verify this pid exists and is haproxy
